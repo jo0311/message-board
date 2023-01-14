@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
   end
 
   def new
-    @message = Message.new(content: 'ここに入力してください')
+    @message = Message.new
   end
 
   def create
@@ -51,6 +51,6 @@ class MessagesController < ApplicationController
   end
 
   def message_params
-    params.require(:message).permit(:content)
+    params.require(:message).permit(:content, :title)
   end
 end
